@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- COMIENZO DEL HEAD -->
+
+<%- include ("./partials/head") -%>
+
+<!-- COMIENZO DEL BODY -->
+
+<body>
+  <%- include('./partials/navbar') -%>
+
+  <!-- page content -->
+  <section>
+    <div class="slider">
+        <ul class="img-slider">
+            <li class="img-banner"><img src="/images/Banner1.png" alt="Imagen de Banner1"></li>
+            <li class="img-banner"><img src="/images/banner2.png" alt="Imagen de Banner2"></li>
+            <li class="img-banner"><img src="/images/banner3.png" alt="Imagen de Banner3"></li>
+            <li class="img-banner"><img src="/images/banner4.png" alt="Imagen de Banner4"></li>
+        </ul>
+    </div>
+  </section>
+
+  <!-- product cards -->
+  <section class="product-cards">
+    <% iphones.forEach(function (datos) { %>
+    <div class="productos">
+        <img class="img-cards" src="/images/productos/<%= datos.imagen %> " alt="iphone">
+        <div class="informacion">
+            <span class="tipo-envio">Envio con normalidad</span>
+            <span class="precio"><%= datos.precio %> €</span>
+            <span class="costo-envio">Envio Gratis</span>
+            <span class="descripcion"><b><%= datos.nombre %></b> <br> <%= datos.color %></span>
+            <div class="calificacion">
+                <span><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </span>
+                <span>1919</span>
+            </div>
+        </div>
+    </div> 
+    <% }); %> 
+  </section>
+
+<!-- FOOTER -->
+
+<%- include('./partials/footer') -%>
+
+
+</body>
+
+<script>
+  const navToggle = document.querySelector(".nav-toggle")
+const navMenu = document.querySelector(".nav-menu")
+
+navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("nav-menu_visible");
+});
+</script>
+</html>

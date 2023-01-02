@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- COMIENZO DEL HEAD -->
+
+<%- include ("./partials/head") -%>
+
+<!-- COMIENZO DEL BODY -->
+
+<body class="body-formulario">
+  <%- include('./partials/navbar') -%>
+
+  <!-- FORMULARIO AGREGAR PRODUCTO -->
+
+
+    <div class="nuevo-iphone">
+
+        <form class="formulario" action="/productos/actualizar" method="POST" enctype="multipart/form-data">
+            <img class="img-logo-formulario" src="/images/logo.png" alt="logo">
+            
+            <h1 class="titulo-formulario">EDITAR 📲 <%= datos.nombre %> </h1>
+             
+            <label for="id">ID de Producto</label>
+            <input type="text" value="<%= datos.id %>" id="id" name="id" required />
+
+            <label for="nombre">iPhone y Capacidad</label>
+            <input type="text" value="<%= datos.nombre %>" id="nombre" name="nombre" required />
+            
+            <label for="chip">Chip</label>
+            <input type="text" value="<%= datos.chip %>" id="chip" name="chip" required />
+
+            <label for="ram">Ram</label>
+            <input type="text" value="<%= datos.ram %>" id="ram" name="ram" required />
+
+            <label for="color">Color</label>
+            <input type="text" value="<%= datos.color %>" id="color" name="color" required />
+
+            <label for="precio">Precio</label>
+            <input type="text" value="<%= datos.precio %>" id="precio" name="precio" required />
+              
+            <label for="imagen">Imagen</label>
+              <div>
+                <img src="/images/productos/<%= datos.imagen %> " width="90" alt="">
+              </div>
+            <input class="inputfile" type="file" id="imagen" name="archivo"/>
+            
+            <button class="boton-agregar-iphone" type="submit">ACTUALIZAR</button>
+            
+        </form>     
+
+    </div>
+
+<!-- FOOTER -->
+
+<%- include('./partials/footer') -%>
+
+
+</body>
+
+<script>
+  const navToggle = document.querySelector(".nav-toggle")
+const navMenu = document.querySelector(".nav-menu")
+
+navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("nav-menu_visible");
+});
+</script>
+</html>    
+
+</html>

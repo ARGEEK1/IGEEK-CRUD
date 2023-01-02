@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- COMIENZO DEL HEAD -->
+
+<%- include ("./partials/head") -%>
+
+<!-- COMIENZO DEL BODY -->
+
+<body>
+  <%- include('./partials/navbar') -%>
+
+  <!-- PRODUCTOS -->
+
+
+    <div class="boton-agregar">
+        <span class="crear-producto">
+            <a href = "/formulario" class="a-a"><button class = "boton">AGREGAR PRODUCTO</button></a>
+        </span>
+    </div>
+    <section class="product-cards">
+        <% iphones.forEach(function (datos) { %>
+        <div class="productos">
+            <img class="img-cards" src="/images/productos/<%= datos.imagen %>" alt="iphone">
+            <div class="informacion">
+                <span class="precio"><%= datos.precio %> €</span>
+                <span class="descripcion"><b><%= datos.nombre %></b></span>
+                <span class="color-iphone">Color: <%= datos.color %></span>
+                <span class="chip">Chip: <%= datos.chip %></span>
+                <span class="ram">Ram: <%= datos.ram %></span>
+            </div>
+            <div class="botones-productos">
+                <div class="boton-editar">
+                    <form method="GET" action="/productos/editar/<%= datos.id %>">
+                        <button class = "boton-e" type="submit">EDITAR</button>
+                    </form>
+                </div>
+                <div class="boton-borrar">
+                    <form method="POST" action="/productos/eliminar/<%= datos.id %>">
+                        <button class = "boton-b" type="submit">BORRAR</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <% }); %> 
+    </section>
+
+
+<!-- FOOTER -->
+
+<%- include('./partials/footer') -%>
+
+
+</body>
+
+<script>
+  const navToggle = document.querySelector(".nav-toggle")
+const navMenu = document.querySelector(".nav-menu")
+
+navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("nav-menu_visible");
+});
+</script>
+</html>    

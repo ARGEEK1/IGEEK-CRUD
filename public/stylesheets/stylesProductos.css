@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f0f0;
+    padding: 80px 0px 0px 0px;
+}
+
+/* Estilos de Boton Agregar Producto */
+
+boton-agregar {
+    display: flex;
+}
+
+.a-a {
+    text-decoration: none;
+}       
+         
+.boton {
+    background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC  51%, #02AAB0  100%);
+    margin: 20px;
+    margin-left: 40px;
+    padding: 15px 45px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(0, 0, 0); 
+    border: none;           
+    border-radius: 10px;
+    display: block;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-position: right center;
+    color: #fff;
+}
+ 
+
+/* Estilos botones de productos */
+.botones-productos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-self: center;
+}
+
+.color-iphone, .chip, .ram {
+    font-weight: 300;
+}
+
+.color-iphone, .chip, .ram * + * {
+    margin-bottom: 0.1em;
+}
+
+.a-e {
+    text-decoration: none;
+}       
+.boton-e {
+    background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA  51%, #77A1D3  100%);
+    margin-right: 5px;
+    padding: 15px 20px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(0, 0, 0);  
+    border: none;          
+    border-radius: 10px;
+    display: block;
+    cursor: pointer;
+} 
+
+.boton-e:hover {
+    background-position: right center;
+    color: #fff;
+}
+
+.a-b {
+    text-decoration: none;
+}
+
+           
+.boton-b {
+    background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%);
+    margin-left: 5px;
+    padding: 15px 20px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(0, 0, 0);  
+    border: none;          
+    border-radius: 10px;
+    display: block;
+    cursor: pointer;
+}
+
+.boton-b:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+}
+ 
+ 
